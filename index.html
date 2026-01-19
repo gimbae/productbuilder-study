@@ -1,14 +1,97 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <title>페퍼로니 소개</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="page">
+    <header>
+      <div class="logo-pill">
+        <div class="logo-dot"></div>
+        <span>피자 토핑 가이드 · 페퍼로니</span>
+      </div>
+      <h1>페퍼로니, 누구냐 넌?</h1>
+      <p class="subtitle">이탈리아 살라미에서 시작된, 미국식 매콤 소시지 토핑 이야기</p>
+    </header>
+
+    <!-- 히어로: 텍스트만 -->
+    <section class="hero">
+      <h2>피자 위 빨간 고기 동그라미의 정체</h2>
+      <p>
+        우리가 흔히 보는 페퍼로니 피자의 그 빨간 동그라미들,
+        사실은 <strong>이탈리아 살라미에서 유래한 미국식 매운 소시지</strong>예요.
+        돼지고기와 소고기에 향신료를 듬뿍 넣어 얇게 썰어 올린 토핑이죠.
+      </p>
+      <div class="tag-row">
+        <span class="tag">#살라미 계열</span>
+        <span class="tag">#미국식 매운 버전</span>
+        <span class="tag">#피자 국민 토핑</span>
+      </div>
+    </section>
+
+    <!-- 카드 2열 + 1열 -->
+    <main>
+      <section class="card">
+        <h3>🍕 페퍼로니, 한 줄 정의</h3>
+        <p>
+          페퍼로니는 <strong>“이탈리아 살라미가 미국에서 매콤하게 변신한 소시지”</strong>예요.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>😋 맛과 식감</h3>
+        <ul>
+          <li>매콤하고 짭짤한 고기 맛</li>
+          <li>얇지만 씹을수록 고기 향이 올라오는 식감</li>
+          <li>구우면 가장자리가 살짝 말리면서 기름 방울이 동동</li>
+        </ul>
+      </section>
+
+      <section class="card wide">
+        <h3>🌍 어디서 왔나요?</h3>
+        <p>
+          뿌리는 <strong>이탈리아의 살라미</strong>지만, 지금 우리가 아는 페퍼로니 스타일은
+          <strong>이탈리아 이민자들이 미국에서 만든 미국식 버전</strong>이에요.
+        </p>
+        <ul>
+          <li>원조: 이탈리아의 건조 소시지, 살라미</li>
+          <li>변신: 미국 입맛에 맞게 더 매콤하고 자극적으로</li>
+          <li>활약: 그 결과, 오늘날 대표적인 <strong>페퍼로니 피자</strong> 탄생</li>
+        </ul>
+        <div class="fun-card">
+          <strong>작은 TMI</strong><br />
+          이탈리아어로 <em>peperoni</em>는 사실 “피망, 파프리카”를 뜻해요.<br />
+          진짜 이탈리아에서 “페퍼로니 피자 주세요” 하면
+          <strong>피망이 잔뜩 올라간 피자</strong>가 나올 수도 있어요!
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      오늘의 정리 · <strong>페퍼로니 = 이탈리아 살라미의 미국식 매콤 변신</strong>
+    </footer>
+
+    <!-- 이미지 버튼 섹션 -->
+    <div class="img-section">
+      <button class="pep-btn" onclick="togglePepperoni()">페퍼로니 사진 보기</button>
+      <div id="pepperoni-wrap">
+        <img
+          class="pep-img"
+          src="https://img-cf.kurly.com/hdims/resize/%3E720x/quality/90/src/shop/data/goodsview/20220818/gv20000410699_1.jpg"
+          alt="페퍼로니 사진1"
+        />
+        <img
+          class="pep-img"
+          src="https://mblogthumb-phinf.pstatic.net/20150513_206/nemomo21_1431498292519LdAXB_JPEG/Pepperoni.jpg?type=w420"
+          alt="페퍼로니 사진2"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>
