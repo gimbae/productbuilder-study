@@ -7,6 +7,7 @@
     --accent-hover: #2980b9;
     --today-bg: #e74c3c;
     --today-text: #fff;
+    --border-color: #ddd;
 }
 
 * {
@@ -17,63 +18,112 @@
 
 body {
     font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    height: 100vh;
-    overflow: hidden; /* Prevent scroll if possible */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+}
+
+/* Header & Nav */
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.site-header nav a {
+    text-decoration: none;
+    color: #666;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.site-header nav a:hover, .site-header nav a.active {
+    color: var(--accent);
+}
+
+/* Main Content Wrapper */
+main {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Search Bar */
+/* App Section (Calendar Tool) */
+.app-section {
+    position: relative;
+    background: #fff;
+    /* Removed fixed height logic, let it size by content, but keep min-height for feel */
+    min-height: 600px; 
+}
+
+/* Search Bar - Adjusted positioning relative to app-section */
 .search-container {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
+    justify-content: center;
     gap: 10px;
+    padding: 20px 0;
+    background: #fff;
+    /* Removed absolute positioning to flow naturally in document */
 }
 
 .search-container input {
-    width: 60px;
-    padding: 8px;
+    width: 70px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
+    font-size: 1rem;
 }
 
 .search-container button {
-    padding: 8px 15px;
+    padding: 10px 20px;
     background: var(--accent);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1rem;
 }
 
 .search-container button:hover {
     background: var(--accent-hover);
 }
 
-/* Main Layout */
+/* Calendar Container */
 .container {
     display: flex;
-    flex: 1;
-    height: 100%;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    border-top: 1px solid #eee;
 }
 
 .split {
     flex: 1;
-    padding: 80px 40px 40px; /* Top padding for search bar space */
+    min-width: 350px; /* Minimum width before wrapping */
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
 }
 
 .header {
@@ -95,7 +145,7 @@ body {
 /* Calendar Grid */
 .calendar-wrapper {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
 }
 
 .weekdays {
@@ -103,7 +153,7 @@ body {
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     opacity: 0.7;
 }
 
@@ -140,45 +190,90 @@ body {
 }
 
 .day.selected {
-    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
 }
 
 /* Light Panel */
 .left-panel {
     background-color: var(--bg-light);
     color: var(--text-light);
+    border-right: 1px solid #eee;
 }
-
-.left-panel .day:hover:not(.empty) {
-    background-color: #eee;
-}
+.left-panel .day:hover:not(.empty) { background-color: #f0f0f0; }
 
 /* Dark Panel */
 .right-panel {
     background-color: var(--bg-dark);
     color: var(--text-dark);
 }
+.right-panel .day:hover:not(.empty) { background-color: #333; }
 
-.right-panel .day:hover:not(.empty) {
-    background-color: #333;
+
+/* Info/Article Section */
+.info-section {
+    background: #fff;
+    padding: 60px 20px;
+    border-top: 1px solid #eee;
 }
 
-/* Responsive */
+.info-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #444;
+}
+
+.info-content h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+.info-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Footer */
+.site-footer {
+    background: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d;
+}
+
+.site-footer a {
+    color: #6c757d;
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: var(--accent);
+}
+
+/* Responsive Tweaks */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        overflow-y: auto;
+    .search-container {
+        flex-wrap: wrap;
     }
     
-    .split {
-        height: auto;
-        min-height: 100vh;
-        padding-top: 60px;
+    .left-panel {
+        border-right: none;
+        border-bottom: 1px solid #eee;
     }
 
-    .search-container {
-        position: fixed;
-        width: 90%;
-        justify-content: center;
+    .info-section {
+        padding: 40px 20px;
     }
 }
