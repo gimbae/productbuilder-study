@@ -68,22 +68,45 @@ main {
     flex-direction: column;
 }
 
+/* Intro Text Section */
+.intro-text {
+    background: #fdfdfd;
+    padding: 40px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.intro-text .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
 /* App Section (Calendar Tool) */
 .app-section {
     position: relative;
     background: #fff;
-    /* Removed fixed height logic, let it size by content, but keep min-height for feel */
     min-height: 600px; 
 }
 
-/* Search Bar - Adjusted positioning relative to app-section */
+/* Search Bar */
 .search-container {
     display: flex;
     justify-content: center;
     gap: 10px;
     padding: 20px 0;
     background: #fff;
-    /* Removed absolute positioning to flow naturally in document */
 }
 
 .search-container input {
@@ -113,13 +136,13 @@ main {
 /* Calendar Container */
 .container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on small screens */
+    flex-wrap: wrap; 
     border-top: 1px solid #eee;
 }
 
 .split {
     flex: 1;
-    min-width: 350px; /* Minimum width before wrapping */
+    min-width: 350px; 
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -233,7 +256,7 @@ main {
 .info-content h3 {
     font-size: 1.3rem;
     color: #2c3e50;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 15px;
     border-left: 4px solid var(--accent);
     padding-left: 10px;
@@ -242,6 +265,34 @@ main {
 .info-content p {
     margin-bottom: 20px;
     text-align: justify;
+}
+
+/* Data Tables */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.info-table th, .info-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.info-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.info-table tr:hover {
+    background-color: #f1f1f1;
 }
 
 /* Footer */
@@ -275,5 +326,13 @@ main {
 
     .info-section {
         padding: 40px 20px;
+    }
+    
+    .info-table {
+        font-size: 0.85rem;
+    }
+    
+    .info-table th, .info-table td {
+        padding: 8px;
     }
 }
