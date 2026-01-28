@@ -18,7 +18,7 @@
         })(window, document, "clarity", "script", "v6g1oxng3q");
     </script>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026 양력/음력 듀얼 캘린더 & 변환기 - 음력 날짜 확인, 24절기, 공휴일</title>
     <meta name="description" content="2026년 및 전후 년도의 양력/음력 날짜를 한눈에 확인하세요. 한국의 24절기, 손 없는 날, 주요 공휴일 정보도 제공하는 무료 달력 서비스입니다. 음력 변환과 생일 확인에 최적화되어 있습니다.">
@@ -59,8 +59,6 @@
     }
     </script>
     <link rel="stylesheet" href="calendar.css">
-    <!-- Lunar Javascript Library -->
-    <script src="https://cdn.jsdelivr.net/npm/lunar-javascript/lunar.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -76,7 +74,7 @@
     <main>
         <section class="intro-text">
             <div class="content-wrapper">
-                <h1>2026년 양력/음력 변환 및 듀얼 캘린더</h1>
+                <h1>2026년 양력 음력 변환 및 듀얼 달력 (24절기, 공휴일)</h1>
                 <p>
                     한국 생활에서 음력은 여전히 중요한 역할을 합니다. 제사, 이사, 손 없는 날 확인, 그리고 부모님의 생신을 챙기기 위해서는 정확한 음력 날짜 확인이 필수적입니다. 
                     본 <strong>듀얼 캘린더</strong> 서비스는 양력 날짜와 그에 상응하는 음력 날짜를 하나의 화면에서 직관적으로 비교하여 보여드립니다. 
@@ -221,5 +219,7 @@
     </footer>
 
     <script src="calendar.js"></script>
+    <!-- Lunar Javascript Library -->
+    <script src="https://cdn.jsdelivr.net/npm/lunar-javascript/lunar.js" defer></script>
 </body>
 </html>
